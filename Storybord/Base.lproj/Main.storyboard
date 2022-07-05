@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageEditor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Xo-iu-elq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="104"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ito-4O-2QO">
+                                        <rect key="frame" x="8" y="52" width="398" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imq-Ro-ReP">
+                                                <rect key="frame" x="16" y="0.0" width="382" height="44"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="imq-Ro-ReP" secondAttribute="trailing" id="5xM-XX-w3O"/>
+                                            <constraint firstItem="imq-Ro-ReP" firstAttribute="leading" secondItem="Ito-4O-2QO" secondAttribute="leading" constant="16" id="Rc7-iW-RWm"/>
+                                            <constraint firstItem="imq-Ro-ReP" firstAttribute="top" secondItem="Ito-4O-2QO" secondAttribute="top" id="Rru-eC-Fsz"/>
+                                            <constraint firstAttribute="height" constant="44" id="U9Z-lA-ZTb"/>
+                                            <constraint firstAttribute="bottom" secondItem="imq-Ro-ReP" secondAttribute="bottom" id="ype-yX-oO6"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Ito-4O-2QO" secondAttribute="trailing" id="385-mx-MI4"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="Ito-4O-2QO" secondAttribute="bottom" id="3lO-pE-TE7"/>
+                                    <constraint firstItem="Ito-4O-2QO" firstAttribute="leading" secondItem="7Xo-iu-elq" secondAttribute="leadingMargin" id="TMD-UV-uw6"/>
+                                    <constraint firstItem="Ito-4O-2QO" firstAttribute="top" secondItem="7Xo-iu-elq" secondAttribute="topMargin" id="jhb-ud-hp3"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9UB-E0-86H">
+                                <rect key="frame" x="0.0" y="112" width="414" height="784"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qGz-yc-Etx">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="rdJ-Sq-Co0">
+                                <rect key="frame" x="15" y="792" width="384" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5h-UG-vPF">
+                                        <rect key="frame" x="0.0" y="0.0" width="191" height="70"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="cnacel-button" title="" imagePadding="10">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYj-dE-MnQ">
+                                        <rect key="frame" x="193" y="0.0" width="191" height="70"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="edit-button"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9UB-E0-86H" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4WB-XD-hRg"/>
+                            <constraint firstItem="7Xo-iu-elq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4u3-Zx-YWP"/>
+                            <constraint firstItem="9UB-E0-86H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BJH-d2-Qde"/>
+                            <constraint firstAttribute="bottom" secondItem="9UB-E0-86H" secondAttribute="bottom" id="EgX-Sw-mj7"/>
+                            <constraint firstItem="9UB-E0-86H" firstAttribute="top" secondItem="7Xo-iu-elq" secondAttribute="bottom" constant="8" id="Ob8-DO-K54"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rdJ-Sq-Co0" secondAttribute="trailing" constant="15" id="eLl-3B-1pl"/>
+                            <constraint firstItem="7Xo-iu-elq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mI1-Jz-RcU"/>
+                            <constraint firstItem="rdJ-Sq-Co0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="u8v-Pp-wib"/>
+                            <constraint firstItem="7Xo-iu-elq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wIT-xt-eOA"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="rdJ-Sq-Co0" secondAttribute="bottom" id="zhe-49-fgx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="PhotoCollectionView" destination="9UB-E0-86H" id="YEe-Vm-CYN"/>
+                        <outlet property="viewEditConfirm" destination="rdJ-Sq-Co0" id="S9n-pL-Jmi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60.869565217391312" y="87.723214285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cnacel-button" width="174" height="56"/>
+        <image name="edit-button" width="174" height="56"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

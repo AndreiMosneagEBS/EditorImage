@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ImageCollectionViewCell" id="gTV-IL-0wX" customClass="ImageCollectionViewCell" customModule="ImageEditor" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="82" height="82"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="82" height="82"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BsM-II-zvd">
+                        <rect key="frame" x="0.0" y="0.0" width="82" height="82"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="82" id="NJf-j2-FcK"/>
+                            <constraint firstAttribute="width" constant="82" id="zT7-es-plV"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rR2-Dj-Gz2">
+                        <rect key="frame" x="5" y="5" width="16" height="16"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pve-Se-XPg">
+                                <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="uncheck"/>
+                                <state key="selected" image="check"/>
+                                <connections>
+                                    <action selector="isSelectedButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="eaS-jE-esy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="pve-Se-XPg" secondAttribute="trailing" id="DG9-af-AEj"/>
+                            <constraint firstAttribute="height" constant="16" id="VDt-89-5Cw"/>
+                            <constraint firstItem="pve-Se-XPg" firstAttribute="top" secondItem="rR2-Dj-Gz2" secondAttribute="top" id="cOJ-qj-26P"/>
+                            <constraint firstAttribute="width" constant="16" id="paK-FT-kk1"/>
+                            <constraint firstAttribute="bottom" secondItem="pve-Se-XPg" secondAttribute="bottom" id="pxY-gd-M4b"/>
+                            <constraint firstItem="pve-Se-XPg" firstAttribute="leading" secondItem="rR2-Dj-Gz2" secondAttribute="leading" id="w3b-0u-aCY"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="rR2-Dj-Gz2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="U4D-hF-mFe"/>
+                <constraint firstItem="BsM-II-zvd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="UfZ-H3-oFa"/>
+                <constraint firstItem="rR2-Dj-Gz2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="fpl-47-lW5"/>
+                <constraint firstItem="BsM-II-zvd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="kNT-Q0-spd"/>
+            </constraints>
+            <size key="customSize" width="82" height="82"/>
+            <connections>
+                <outlet property="checkButton" destination="pve-Se-XPg" id="qRW-Lc-HRM"/>
+                <outlet property="checkView" destination="rR2-Dj-Gz2" id="NeO-i8-wO9"/>
+                <outlet property="imageViewCell" destination="BsM-II-zvd" id="4gj-jX-ovI"/>
+            </connections>
+            <point key="canvasLocation" x="153.62318840579712" y="135.26785714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="check" width="16" height="16"/>
+        <image name="uncheck" width="16" height="16"/>
+    </resources>
+</document>
