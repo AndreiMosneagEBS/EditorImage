@@ -15,7 +15,7 @@
 		8E1746132873038700B4AB31 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1746112873038700B4AB31 /* ImageCollectionViewCell.swift */; };
 		8E1746142873038700B4AB31 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E1746122873038700B4AB31 /* ImageCollectionViewCell.xib */; };
 		8EB46A042874590300FED90E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB46A022874590300FED90E /* ViewController.swift */; };
-		8EB46A052874590300FED90E /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EB46A032874590300FED90E /* ViewController.xib */; };
+		8EB46A07287460F700FED90E /* EditPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB46A06287460F700FED90E /* EditPhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		8E1746112873038700B4AB31 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		8E1746122873038700B4AB31 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		8EB46A022874590300FED90E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8EB46A032874590300FED90E /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		8EB46A06287460F700FED90E /* EditPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				8EB46A022874590300FED90E /* ViewController.swift */,
-				8EB46A032874590300FED90E /* ViewController.xib */,
+				8EB46A06287460F700FED90E /* EditPhotoViewController.swift */,
 			);
 			path = ViewControler;
 			sourceTree = "<group>";
@@ -158,7 +158,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EB46A052874590300FED90E /* ViewController.xib in Resources */,
 				8E174607286DC26500B4AB31 /* LaunchScreen.storyboard in Resources */,
 				8E174604286DC26500B4AB31 /* Assets.xcassets in Resources */,
 				8E1746142873038700B4AB31 /* ImageCollectionViewCell.xib in Resources */,
@@ -174,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E1745FB286DC26300B4AB31 /* AppDelegate.swift in Sources */,
+				8EB46A07287460F700FED90E /* EditPhotoViewController.swift in Sources */,
 				8E1746132873038700B4AB31 /* ImageCollectionViewCell.swift in Sources */,
 				8EB46A042874590300FED90E /* ViewController.swift in Sources */,
 				8E1745FD286DC26300B4AB31 /* SceneDelegate.swift in Sources */,

@@ -23,125 +23,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4EDD4812-CE92-4501-B5BC-C9701ABC547B"
+            uuid = "306C1F75-9979-474A-86C6-90FE44C12D87"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ViewControler/ViewController.swift"
+            filePath = "ViewControler/EditPhotoViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "checkEdit(asset:)"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "setupButton()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B3F78C07-7FD8-452F-AD54-65D25A21493E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewControler/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "ViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "B3F78C07-7FD8-452F-AD54-65D25A21493E - c79a1085be4f67b5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ImageEditor.ViewController.lastAssetSelected.getter : Swift.Optional&lt;__C.PHAsset&gt;"
-                  moduleName = "ImageEditor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andreim./Desktop/ImageEditor/ViewControler/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "88">
-               </Location>
-               <Location
-                  uuid = "B3F78C07-7FD8-452F-AD54-65D25A21493E - 948d6b846e498ba9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ImageEditor.ViewController.lastAssetSelected.setter : Swift.Optional&lt;__C.PHAsset&gt;"
-                  moduleName = "ImageEditor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andreim./Desktop/ImageEditor/ViewControler/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "108">
-               </Location>
-               <Location
-                  uuid = "B3F78C07-7FD8-452F-AD54-65D25A21493E - 7db5ffb79d8b8eb8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ImageEditor.ViewController.lastAssetSelected.modify : Swift.Optional&lt;__C.PHAsset&gt;"
-                  moduleName = "ImageEditor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andreim./Desktop/ImageEditor/ViewControler/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  uuid = "B3F78C07-7FD8-452F-AD54-65D25A21493E - cb5435c457015d41"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ImageEditor.ViewController.lastAssetSelected.modify : Swift.Optional&lt;__C.PHAsset&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "ImageEditor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andreim./Desktop/ImageEditor/ViewControler/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  uuid = "B3F78C07-7FD8-452F-AD54-65D25A21493E - 5d6dd2f995078755"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ImageEditor.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; ImageEditor.ViewController"
-                  moduleName = "ImageEditor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andreim./Desktop/ImageEditor/ViewControler/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "304">
-               </Location>
-               <Location
-                  uuid = "B3F78C07-7FD8-452F-AD54-65D25A21493E - bafb3bb851ab4d14"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ImageEditor.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ImageEditor.ViewController&gt;"
-                  moduleName = "ImageEditor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andreim./Desktop/ImageEditor/ViewControler/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "280">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -15,35 +15,29 @@ protocol ViewControllerDelegate {
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var PhotoCollectionView: UICollectionView!
+    @IBOutlet weak var CollectionView: UICollectionView!
     @IBOutlet weak var viewEditConfirm: UIView!
     
     var delegate: ViewControllerDelegate?
     
     private var image: [PHAsset] = []
     private var lastAssetSelected: PHAsset?
-    
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCell()
         setupUI()
         populatePhotos()
-        PhotoCollectionView.delegate = self
-//        viewEditConfirm.isHidden = false
-        // Do any additional setup after loading the view.u
-        
+        CollectionView.delegate = self
         updateEditButtons()
         
         
     }
     
     private func registerCell() {
-        PhotoCollectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
-        PhotoCollectionView.register(UINib(nibName: "EditImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: EditImageCollectionViewCell.identifier)
-        PhotoCollectionView.delegate = self
-        PhotoCollectionView.dataSource = self
+        CollectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
+        CollectionView.delegate = self
+        CollectionView.dataSource = self
     }
     
     private func setupUI() {
@@ -60,7 +54,7 @@ class ViewController: UIViewController {
                 }
                 self?.image.reverse()
                 DispatchQueue.main.async {
-                    self?.PhotoCollectionView.reloadData()
+                    self?.CollectionView.reloadData()
                 }
             }
         }
@@ -69,7 +63,20 @@ class ViewController: UIViewController {
     private func updateEditButtons() {
         viewEditConfirm.isHidden = lastAssetSelected == nil
     }
+    
+    //MARK: - Actions
+    
+    @IBAction func editButton(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let editViewController = storyBoard.instantiateViewController(withIdentifier: "EditPhotoViewController") as! EditPhotoViewController
+        editViewController.lastAssetSelected = self.lastAssetSelected
+        self.navigationController?.pushViewController(editViewController, animated: true)
+        
+    }
+    
 }
+
+//MARK: - UICollectionViewDelegate
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -83,7 +90,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = PhotoCollectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as? ImageCollectionViewCell
+        guard let cell = CollectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as? ImageCollectionViewCell
         else {
             fatalError("ImageCollectionViewCell Is not found")
         }
@@ -98,7 +105,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (PhotoCollectionView.bounds.width / 4) - 8, height: 100)
+        return CGSize(width: (CollectionView.bounds.width / 4) - 8, height: 100)
     }
     
 }
@@ -112,7 +119,7 @@ extension ViewController: ImageCollectionViewCellDelegate {
         }
         
         updateEditButtons()
-        PhotoCollectionView.reloadData()
+        CollectionView.reloadData()
     }
     }
-
+//
