@@ -9,25 +9,28 @@ import Foundation
 import UIKit
 
 class EditPhotoViewController: UIViewController {
+    
     var lastAssetSelected: PHAsset?
+   
+   
     
     @IBOutlet weak var imageEdit: UIImageView!
     @IBOutlet weak var setButtonColor: UIButton!
     @IBOutlet weak var viewOutlet: UIView!
     @IBOutlet weak var shareButtonOutlet: UIButton!
     @IBOutlet weak var bacButtonOutlet: UIButton!
+    @IBOutlet weak var contrastCount: UILabel!
+    @IBOutlet weak var brightnessCount: UILabel!
+    @IBOutlet weak var monochromeCount: UILabel!
+    @IBOutlet weak var sepiaCount: UILabel!
+    @IBOutlet weak var vignetteCount: UILabel!
+    @IBOutlet var sliderCollection: [UISlider]!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setImage()
         setupButton()
-    }
-    
-    private func setImage() {
-        if let image = lastAssetSelected {
-            let image = getAssetThumbnail(asset: image)
-            imageEdit.image = image
-        }
+        imageEdit.image = SetImage.getImage(assets:lastAssetSelected)
     }
     
     private func popToBack() {
@@ -36,24 +39,58 @@ class EditPhotoViewController: UIViewController {
     
     private func setupButton() {
         setButtonColor.tintColor = UIColor(named: "Color-1")
-        shareButtonOutlet.tintColor = .black
-        bacButtonOutlet.tintColor = .black
+        shareButtonOutlet.tintColor = UIColor(named: "Color")
+        bacButtonOutlet.tintColor = UIColor(named: "Color")
         viewOutlet.layer.cornerRadius = viewOutlet.frame.height / 2
         viewOutlet.backgroundColor = UIColor(named: "Color")
     }
     
-    func getAssetThumbnail(asset: PHAsset) -> UIImage {
-        let manager = PHImageManager.default()
-        let option = PHImageRequestOptions()
-        var thumbnail = UIImage()
-        option.isSynchronous = true
-        manager.requestImage(for: asset, targetSize: CGSize(width: 2000, height: 2000), contentMode: .aspectFill, options: option, resultHandler: {(result, info)->Void in
-                thumbnail = result!
-        })
-        return thumbnail
+    
+        
+    private func conditionSine(value: Float) -> String {
+        var value = String(Int(value))
+        if value.prefix(1) != "-", value != "0" {
+            value = "+\(value)"
+        }
+        return value
     }
+    
+    // MARK: - Action
+    
     @IBAction func backButton(_ sender: Any) {
         popToBack()
+    }
+    
+    @IBAction func shareButton(_ sender: UIButton) {
+        SharedServices.sharedImage(image: SetImage.getImage(assets: lastAssetSelected), parentView: self)
+    }
+    
+    
+    @IBAction func contrastSlider(_ sender: UISlider) {
+        let value = conditionSine(value: sender.value)
+        contrastCount.text = value
+//        increaseContrast(setAssetsImage(), value: Int(sender.value))
+    
+    }
+    
+    @IBAction func brightnessSlider(_ sender: UISlider) {
+        let value = conditionSine(value: sender.value)
+        brightnessCount.text = value
+        }
+    
+    @IBAction func monochromeSlider(_ sender: UISlider) {
+        let value = conditionSine(value: sender.value)
+        monochromeCount.text = value
+    }
+    
+    @IBAction func sepiaSlider(_ sender: UISlider) {
+        let value = conditionSine(value: sender.value)
+        sepiaCount.text = value
+    }
+    
+    @IBAction func vignetteSlider(_ sender: UISlider) {
+        let value = conditionSine(value: sender.value)
+        vignetteCount.text = value
     }
     
 }

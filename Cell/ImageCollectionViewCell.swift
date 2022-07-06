@@ -24,9 +24,9 @@ class ImageCollectionViewCell: UICollectionViewCell {
     private func configView() {
         checkView.layer.cornerRadius = checkView.bounds.height / 2
         checkButton.image(for: .selected)
+        imageViewCell.layer.cornerRadius = 4
     }
     private func imageConfig() {
-        imageViewCell.layer.cornerRadius = 4
     }
     
     override func awakeFromNib() {

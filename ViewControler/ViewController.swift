@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var CollectionView: UICollectionView!
     @IBOutlet weak var viewEditConfirm: UIView!
+    @IBOutlet weak var shareButtonSelect: UIButton!
     
     var delegate: ViewControllerDelegate?
     
@@ -30,8 +31,12 @@ class ViewController: UIViewController {
         populatePhotos()
         CollectionView.delegate = self
         updateEditButtons()
+        editButton()
         
-        
+    }
+    
+    private func editButton() {
+        shareButtonSelect.tintColor = UIColor(named: "Color")
     }
     
     private func registerCell() {
@@ -62,7 +67,9 @@ class ViewController: UIViewController {
     
     private func updateEditButtons() {
         viewEditConfirm.isHidden = lastAssetSelected == nil
+        shareButtonSelect.isHidden = lastAssetSelected == nil
     }
+    
     
     //MARK: - Actions
     
@@ -70,11 +77,20 @@ class ViewController: UIViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let editViewController = storyBoard.instantiateViewController(withIdentifier: "EditPhotoViewController") as! EditPhotoViewController
         editViewController.lastAssetSelected = self.lastAssetSelected
+        
         self.navigationController?.pushViewController(editViewController, animated: true)
         
     }
     
+    @IBAction func shaderButton(_ sender: Any) {
+        SharedServices.sharedImage(image: SetImage.getImage(assets: lastAssetSelected), parentView: self)
+        
+    }
+    
+    
 }
+
+
 
 //MARK: - UICollectionViewDelegate
 

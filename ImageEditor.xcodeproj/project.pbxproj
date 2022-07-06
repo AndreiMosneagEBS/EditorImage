@@ -14,6 +14,9 @@
 		8E174607286DC26500B4AB31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E174605286DC26500B4AB31 /* LaunchScreen.storyboard */; };
 		8E1746132873038700B4AB31 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1746112873038700B4AB31 /* ImageCollectionViewCell.swift */; };
 		8E1746142873038700B4AB31 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E1746122873038700B4AB31 /* ImageCollectionViewCell.xib */; };
+		8E42CE432875880600474766 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42CE422875880600474766 /* CustomSlider.swift */; };
+		8E42CE452875C50700474766 /* SharedServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42CE442875C50700474766 /* SharedServices.swift */; };
+		8E42CE472875C75C00474766 /* SetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42CE462875C75C00474766 /* SetImage.swift */; };
 		8EB46A042874590300FED90E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB46A022874590300FED90E /* ViewController.swift */; };
 		8EB46A07287460F700FED90E /* EditPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB46A06287460F700FED90E /* EditPhotoViewController.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +31,9 @@
 		8E174608286DC26500B4AB31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E1746112873038700B4AB31 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		8E1746122873038700B4AB31 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		8E42CE422875880600474766 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		8E42CE442875C50700474766 /* SharedServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedServices.swift; sourceTree = "<group>"; };
+		8E42CE462875C75C00474766 /* SetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetImage.swift; sourceTree = "<group>"; };
 		8EB46A022874590300FED90E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8EB46A06287460F700FED90E /* EditPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,6 +55,7 @@
 				8E17460F2872D92600B4AB31 /* ViewControler */,
 				8E1746102872D95200B4AB31 /* Storybord */,
 				8E17460E2872D91900B4AB31 /* Cell */,
+				8E42CE41287587D100474766 /* Setup */,
 				8E174603286DC26500B4AB31 /* Assets.xcassets */,
 				8E1745F9286DC26300B4AB31 /* ImageEditor */,
 				8E1745F8286DC26300B4AB31 /* Products */,
@@ -88,6 +95,8 @@
 			children = (
 				8EB46A022874590300FED90E /* ViewController.swift */,
 				8EB46A06287460F700FED90E /* EditPhotoViewController.swift */,
+				8E42CE442875C50700474766 /* SharedServices.swift */,
+				8E42CE462875C75C00474766 /* SetImage.swift */,
 			);
 			path = ViewControler;
 			sourceTree = "<group>";
@@ -98,6 +107,14 @@
 				8E174600286DC26300B4AB31 /* Main.storyboard */,
 			);
 			path = Storybord;
+			sourceTree = "<group>";
+		};
+		8E42CE41287587D100474766 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				8E42CE422875880600474766 /* CustomSlider.swift */,
+			);
+			path = Setup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,7 +189,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E42CE472875C75C00474766 /* SetImage.swift in Sources */,
 				8E1745FB286DC26300B4AB31 /* AppDelegate.swift in Sources */,
+				8E42CE452875C50700474766 /* SharedServices.swift in Sources */,
+				8E42CE432875880600474766 /* CustomSlider.swift in Sources */,
 				8EB46A07287460F700FED90E /* EditPhotoViewController.swift in Sources */,
 				8E1746132873038700B4AB31 /* ImageCollectionViewCell.swift in Sources */,
 				8EB46A042874590300FED90E /* ViewController.swift in Sources */,
