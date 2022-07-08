@@ -336,7 +336,9 @@
                     <connections>
                         <outlet property="bacButtonOutlet" destination="zxW-CP-Avt" id="lD3-Oz-3Ry"/>
                         <outlet property="brightnessCount" destination="5Z0-xY-JDv" id="7rF-sO-mkN"/>
+                        <outlet property="brightnessIntensiti" destination="MK7-Ua-pxR" id="r5l-1w-7B9"/>
                         <outlet property="contrastCount" destination="ZKw-XM-4Cz" id="wDm-qm-eUv"/>
+                        <outlet property="contrastIntensity" destination="Nd5-SS-Ya8" id="mNO-0a-eA4"/>
                         <outlet property="imageEdit" destination="Leg-cl-oXm" id="1hN-nL-f8c"/>
                         <outlet property="monochromeCount" destination="pwL-C2-lvF" id="bEF-rd-abm"/>
                         <outlet property="sepiaCount" destination="GF3-Bk-kGa" id="Ub3-lh-q27"/>
