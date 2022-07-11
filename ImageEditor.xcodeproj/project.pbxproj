@@ -17,7 +17,6 @@
 		8E42CE432875880600474766 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42CE422875880600474766 /* CustomSlider.swift */; };
 		8E42CE452875C50700474766 /* SharedServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42CE442875C50700474766 /* SharedServices.swift */; };
 		8E42CE472875C75C00474766 /* SetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42CE462875C75C00474766 /* SetImage.swift */; };
-		8E42CE492876FCA900474766 /* SetFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42CE482876FCA900474766 /* SetFilter.swift */; };
 		8EB46A042874590300FED90E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB46A022874590300FED90E /* ViewController.swift */; };
 		8EB46A07287460F700FED90E /* EditPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB46A06287460F700FED90E /* EditPhotoViewController.swift */; };
 /* End PBXBuildFile section */
@@ -35,7 +34,6 @@
 		8E42CE422875880600474766 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		8E42CE442875C50700474766 /* SharedServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedServices.swift; sourceTree = "<group>"; };
 		8E42CE462875C75C00474766 /* SetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetImage.swift; sourceTree = "<group>"; };
-		8E42CE482876FCA900474766 /* SetFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFilter.swift; sourceTree = "<group>"; };
 		8EB46A022874590300FED90E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8EB46A06287460F700FED90E /* EditPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,7 +97,6 @@
 				8EB46A06287460F700FED90E /* EditPhotoViewController.swift */,
 				8E42CE442875C50700474766 /* SharedServices.swift */,
 				8E42CE462875C75C00474766 /* SetImage.swift */,
-				8E42CE482876FCA900474766 /* SetFilter.swift */,
 			);
 			path = ViewControler;
 			sourceTree = "<group>";
@@ -193,7 +190,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E42CE472875C75C00474766 /* SetImage.swift in Sources */,
-				8E42CE492876FCA900474766 /* SetFilter.swift in Sources */,
 				8E1745FB286DC26300B4AB31 /* AppDelegate.swift in Sources */,
 				8E42CE452875C50700474766 /* SharedServices.swift in Sources */,
 				8E42CE432875880600474766 /* CustomSlider.swift in Sources */,

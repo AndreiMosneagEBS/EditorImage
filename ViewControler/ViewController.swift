@@ -84,13 +84,8 @@ class ViewController: UIViewController {
     
     @IBAction func shaderButton(_ sender: Any) {
         SharedServices.sharedImage(image: SetImage.getImage(assets: lastAssetSelected), parentView: self)
-        
     }
-    
-    
 }
-
-
 
 //MARK: - UICollectionViewDelegate
 

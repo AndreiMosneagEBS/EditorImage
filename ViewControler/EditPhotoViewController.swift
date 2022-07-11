@@ -11,18 +11,14 @@ import CoreImage
 
 class EditPhotoViewController: UIViewController {
     
+    private var beginImage: CIImage!
     var lastAssetSelected: PHAsset?
-    var setFilter = ""
-    
-    var context = CIContext()
-    var contrastFilter: CIFilter!
-    var brightFilter: CIFilter!
-    var monochromeFilter: CIFilter!
-    var sepiaFilter: CIFilter!
-    var vignetteFilter: CIFilter!
-    
-    private var typeFilter: TypeFilter = .contrast
-    private var beginImage: CIImage?
+    var valueContrast = Int()
+    var valueBrightness = Int()
+    var valueSepia = Int()
+    var valueMonochrome = Int()
+    var valueVignette = Int()
+    var changeValue: Bool = true
     
     @IBOutlet weak var imageEdit: UIImageView!
     @IBOutlet weak var setButtonColor: UIButton!
@@ -45,44 +41,10 @@ class EditPhotoViewController: UIViewController {
         super.viewDidLoad()
         setupButton()
         imageEdit.image = SetImage.getImage(assets:lastAssetSelected)
-        //        imagePickerControl(filter: typeFilter)
-        beginImage = CIImage(image: SetImage.getImage(assets: lastAssetSelected))
+        beginImage = CIImage(image: SetImage.getImage(assets:lastAssetSelected))
+        outputImageSet()
     }
-    
-    enum TypeFilter: Int {
-        case contrast
-        case brightness
-        case monochrome
-        case sepia
-        case vignette
-    }
-    
-    private func imagePickerControl(filter: TypeFilter) {
-        var setFilter = ""
-        
-        switch filter {
-        case .contrast:
-            setFilter = "CISepiaTone"
-            contrastFilter = CIFilter(name: setFilter)
-            contrastFilter.setValue(CIImage(image: SetImage.getImage(assets: lastAssetSelected)), forKey: kCIInputImageKey)
-            applyProcessing()
-            
-        case .brightness:
-            setFilter = "CIBloom"
-            brightFilter =  CIFilter(name: setFilter)
-            brightFilter.setValue(beginImage, forKey: kCIInputImageKey)
-            brightessFilterApply()
-            
-        case .monochrome:
-            setFilter = "CIColorMonochrome"
-        case .sepia:
-            setFilter = "CIVignette"
-        case .vignette:
-            setFilter = "CIVignette"
-        }
-    }
-    
-    
+
     private func popToBack() {
         self.navigationController?.popViewController(animated: true)
     }
@@ -95,8 +57,6 @@ class EditPhotoViewController: UIViewController {
         viewOutlet.backgroundColor = UIColor(named: "Color")
     }
     
-    
-    
     private func conditionSine(value: Float) -> String {
         var value = String(Int(value))
         if value.prefix(1) != "-", value != "0" {
@@ -105,25 +65,45 @@ class EditPhotoViewController: UIViewController {
         return value
     }
     
-    func applyProcessing() {
-        contrastFilter.setValue(contrastIntensity.value, forKey: kCIInputIntensityKey)
-        if let cgImage = context.createCGImage(contrastFilter.outputImage!, from: contrastFilter.outputImage!.extent) {
-            beginImage = CIImage(cgImage: cgImage)
-            imageEdit.image =  UIImage(cgImage: cgImage)
+    private func outputImageSet() {
+        DispatchQueue.global().async {
+            let outputImage = self.beginImage
+                .applyingFilter("CIColorControls", parameters: [kCIInputSaturationKey : self.valueContrast + 1])
+                .applyingFilter("CIExposureAdjust", parameters: [kCIInputEVKey : (self.valueBrightness / 2) / 4])
+                .applyingFilter("CIColorControls", parameters: [kCIInputContrastKey : (self.valueMonochrome + 1)])
+                .applyingFilter("CISepiaTone", parameters: [kCIInputIntensityKey : self.valueSepia ])
+                .applyingFilter("CIVignette", parameters: [kCIInputIntensityKey : self.valueVignette])
+            
+            
+            if let cgImage = CIContext().createCGImage(outputImage, from: outputImage.extent) {
+                DispatchQueue.main.async {
+                    self.imageEdit.image =  UIImage(cgImage: cgImage)
+                }
+            }
         }
     }
     
-    func brightessFilterApply() {
-        brightFilter.setValue(brightnessIntensiti.value, forKey: kCIInputIntensityKey)
-        if let cgImage = context.createCGImage(brightFilter.outputImage!, from: brightFilter.outputImage!.extent) {
-            beginImage = CIImage(cgImage: cgImage)
-            imageEdit.image = UIImage(cgImage: cgImage)
-        }
+    private func setOriginalImage(sender: UISlider) {
+    
     }
-    
-    
     
     // MARK: - Action
+    
+    @IBAction func leftAction(_ sender: Any) {
+        
+    }
+    
+    
+    @IBAction func rightAction(_ sender: Any) {
+    }
+    
+    
+    @IBAction func showOriginal(_ sender: Any) {
+        imageEdit.image = UIImage(ciImage: beginImage)
+        contrastIntensity.value = 0
+        valueContrast = 0
+    }
+    
     
     @IBAction func backButton(_ sender: Any) {
         popToBack()
@@ -136,31 +116,38 @@ class EditPhotoViewController: UIViewController {
     @IBAction func contrastSlider(_ sender: UISlider) {
         let value = conditionSine(value: sender.value)
         contrastCount.text = value
-        imagePickerControl(filter: .contrast)
+        valueContrast = Int(sender.value)
+        outputImageSet()
+        
     }
     
     @IBAction func brightnessSlider(_ sender: UISlider) {
         let value = conditionSine(value: sender.value)
         brightnessCount.text = value
-        imagePickerControl(filter: .brightness)
+        valueBrightness = Int(sender.value)
+        
+        outputImageSet()
     }
     
     @IBAction func monochromeSlider(_ sender: UISlider) {
         let value = conditionSine(value: sender.value)
         monochromeCount.text = value
-        imagePickerControl(filter: .monochrome)
+        valueMonochrome = Int(sender.value)
+        outputImageSet()
     }
     
     @IBAction func sepiaSlider(_ sender: UISlider) {
         let value = conditionSine(value: sender.value)
         sepiaCount.text = value
-        typeFilter = .sepia
+        valueSepia = Int(sender.value)
+        outputImageSet()
     }
     
     @IBAction func vignetteSlider(_ sender: UISlider) {
         let value = conditionSine(value: sender.value)
         vignetteCount.text = value
-        typeFilter = .vignette
+        valueVignette = Int(sender.value)
+        outputImageSet()
     }
     
 }

@@ -46,8 +46,8 @@
             filePath = "ViewControler/EditPhotoViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "contrastSlider(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -55,16 +55,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "29B76AAF-C12A-4944-9367-F96EBB3AA2D1"
+            uuid = "AEAFEBA6-6118-4E70-97A8-E9BFEE1C33BB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewControler/EditPhotoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "702EEBB0-F89F-47BA-A35E-39B8B7538136"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViewControler/EditPhotoViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "contrastSlider(_:)"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "showOriginal(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
