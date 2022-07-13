@@ -129,9 +129,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxW-CP-Avt">
-                                <rect key="frame" x="16" y="44" width="37" height="20"/>
+                                <rect key="frame" x="16" y="44" width="37" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="rdB-yW-hiT"/>
+                                    <constraint firstAttribute="height" constant="32" id="rdB-yW-hiT"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="uxy-yL-hn8"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
@@ -178,13 +178,15 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Nd5-SS-Ya8" customClass="CustomSlider">
+                                    <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Nd5-SS-Ya8" customClass="CustomSlider">
                                         <rect key="frame" x="-2" y="38" width="386" height="38.5"/>
                                         <color key="minimumTrackTintColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="maximumTrackTintColor" red="0.46274507050000002" green="0.46274507050000002" blue="0.46274507050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="thumbTintColor" red="0.1725490093" green="0.5411764979" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="contrastSlider:" destination="NWM-fc-1ma" eventType="valueChanged" id="eLi-zZ-FQp"/>
+                                            <action selector="contrastSliderEndChange:" destination="NWM-fc-1ma" eventType="touchUpInside" id="mB3-fT-nIT"/>
+                                            <action selector="contrastSliderEndChange:" destination="NWM-fc-1ma" eventType="touchUpOutside" id="zYw-bF-rYX"/>
                                         </connections>
                                     </slider>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Bht-sR-w4I">
@@ -204,13 +206,15 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="MK7-Ua-pxR">
+                                    <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="MK7-Ua-pxR">
                                         <rect key="frame" x="-2" y="113.5" width="386" height="38.5"/>
                                         <color key="minimumTrackTintColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="maximumTrackTintColor" red="0.46274507050000002" green="0.46274507050000002" blue="0.46274507050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="thumbTintColor" red="0.1725490093" green="0.5411764979" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="brightnessSlider:" destination="NWM-fc-1ma" eventType="valueChanged" id="YaJ-Iq-Lr9"/>
+                                            <action selector="contrastSliderEndChange:" destination="NWM-fc-1ma" eventType="touchUpInside" id="DzC-6b-q05"/>
+                                            <action selector="contrastSliderEndChange:" destination="NWM-fc-1ma" eventType="touchUpOutside" id="Oi0-19-q7D"/>
                                         </connections>
                                     </slider>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="BBu-nl-lmv">
@@ -230,12 +234,14 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="I5r-P2-BbY">
+                                    <slider opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="I5r-P2-BbY">
                                         <rect key="frame" x="-2" y="189" width="386" height="39"/>
                                         <color key="minimumTrackTintColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="maximumTrackTintColor" red="0.46274507050000002" green="0.46274507050000002" blue="0.46274507050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="thumbTintColor" red="0.1725490093" green="0.5411764979" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
+                                            <action selector="contrastSliderEndChange:" destination="NWM-fc-1ma" eventType="touchUpOutside" id="1ab-NJ-sn8"/>
+                                            <action selector="contrastSliderEndChange:" destination="NWM-fc-1ma" eventType="touchUpInside" id="PP6-UO-AXe"/>
                                             <action selector="monochromeSlider:" destination="NWM-fc-1ma" eventType="valueChanged" id="ge8-De-YwX"/>
                                         </connections>
                                     </slider>
@@ -256,12 +262,14 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="0MZ-gD-iie">
+                                    <slider opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="0MZ-gD-iie">
                                         <rect key="frame" x="-2" y="264.5" width="386" height="39"/>
                                         <color key="minimumTrackTintColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="maximumTrackTintColor" red="0.46274507050000002" green="0.46274507050000002" blue="0.46274507050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="thumbTintColor" red="0.1725490093" green="0.5411764979" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
+                                            <action selector="contrastSliderEndChange:" destination="NWM-fc-1ma" eventType="touchUpOutside" id="hg8-0L-eNA"/>
+                                            <action selector="contrastSliderEndChange:" destination="NWM-fc-1ma" eventType="touchUpInside" id="yg2-uA-gUr"/>
                                             <action selector="sepiaSlider:" destination="NWM-fc-1ma" eventType="valueChanged" id="EXi-Cv-HA2"/>
                                         </connections>
                                     </slider>
@@ -282,12 +290,14 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Zfd-k7-iMv">
+                                    <slider opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Zfd-k7-iMv">
                                         <rect key="frame" x="-2" y="340" width="386" height="39"/>
                                         <color key="minimumTrackTintColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="maximumTrackTintColor" red="0.46274507050000002" green="0.46274507050000002" blue="0.46274507050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="thumbTintColor" red="0.1725490093" green="0.5411764979" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
+                                            <action selector="contrastSliderEndChange:" destination="NWM-fc-1ma" eventType="touchUpOutside" id="BcM-1y-hKJ"/>
+                                            <action selector="contrastSliderEndChange:" destination="NWM-fc-1ma" eventType="touchUpInside" id="z53-Fn-faF"/>
                                             <action selector="vignetteSlider:" destination="NWM-fc-1ma" eventType="valueChanged" id="mRU-dx-Tjt"/>
                                         </connections>
                                     </slider>
@@ -298,9 +308,12 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyA-of-5zg">
                                         <rect key="frame" x="0.0" y="3" width="24" height="21"/>
-                                        <color key="backgroundColor" red="0.27450981740000002" green="0.59215688710000003" blue="0.55686277149999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="VectorChek"/>
+                                        <connections>
+                                            <action selector="saveButtonWith_sender:" destination="NWM-fc-1ma" eventType="touchUpInside" id="739-JR-0be"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -361,7 +374,6 @@
                             <constraint firstItem="Leg-cl-oXm" firstAttribute="top" secondItem="bdx-5B-dAH" secondAttribute="bottom" constant="28" id="BWa-Xw-TTf"/>
                             <constraint firstItem="3ee-t5-DuU" firstAttribute="trailing" secondItem="OmV-6R-DCh" secondAttribute="trailing" constant="16" id="Djc-dr-5w2"/>
                             <constraint firstItem="M9D-Rm-0Vk" firstAttribute="top" secondItem="x1G-9F-9xw" secondAttribute="topMargin" id="HHM-oQ-4hI"/>
-                            <constraint firstItem="Leg-cl-oXm" firstAttribute="top" secondItem="zxW-CP-Avt" secondAttribute="bottom" constant="40" id="No1-O4-jGz"/>
                             <constraint firstItem="Leg-cl-oXm" firstAttribute="leading" secondItem="3ee-t5-DuU" secondAttribute="leading" constant="16" id="Pr9-PA-CAL"/>
                             <constraint firstItem="bdx-5B-dAH" firstAttribute="leading" secondItem="zxj-hZ-hYA" secondAttribute="trailing" constant="1" id="QPe-oS-04B"/>
                             <constraint firstItem="fBw-7z-9WM" firstAttribute="top" secondItem="Leg-cl-oXm" secondAttribute="bottom" constant="24" id="SqQ-u8-KWB"/>
@@ -381,17 +393,26 @@
                     </view>
                     <connections>
                         <outlet property="bacButtonOutlet" destination="zxW-CP-Avt" id="lD3-Oz-3Ry"/>
+                        <outlet property="backButton" destination="zxj-hZ-hYA" id="d0l-5Z-FID"/>
                         <outlet property="brightnessCount" destination="5Z0-xY-JDv" id="7rF-sO-mkN"/>
-                        <outlet property="brightnessIntensiti" destination="MK7-Ua-pxR" id="r5l-1w-7B9"/>
+                        <outlet property="brightnessIntensity" destination="MK7-Ua-pxR" id="r5l-1w-7B9"/>
                         <outlet property="contrastCount" destination="ZKw-XM-4Cz" id="wDm-qm-eUv"/>
                         <outlet property="contrastIntensity" destination="Nd5-SS-Ya8" id="mNO-0a-eA4"/>
                         <outlet property="imageEdit" destination="Leg-cl-oXm" id="1hN-nL-f8c"/>
                         <outlet property="monochromeCount" destination="pwL-C2-lvF" id="bEF-rd-abm"/>
+                        <outlet property="monochromeIntensity" destination="I5r-P2-BbY" id="B5a-Tk-qX7"/>
                         <outlet property="sepiaCount" destination="GF3-Bk-kGa" id="Ub3-lh-q27"/>
+                        <outlet property="sepiaIntensity" destination="0MZ-gD-iie" id="uAm-Ew-IHN"/>
                         <outlet property="setButtonColor" destination="oyA-of-5zg" id="eWj-lH-uqR"/>
                         <outlet property="shareButtonOutlet" destination="s7G-Um-LWP" id="1hz-3w-WnO"/>
                         <outlet property="viewOutlet" destination="oyA-of-5zg" id="vj0-Ns-Hpw"/>
                         <outlet property="vignetteCount" destination="97z-Pv-avO" id="NbU-ls-S8X"/>
+                        <outlet property="vignetteIntensity" destination="Zfd-k7-iMv" id="q95-C6-1TX"/>
+                        <outletCollection property="sliderCollection" destination="Nd5-SS-Ya8" collectionClass="NSMutableArray" id="RZh-XH-bjq"/>
+                        <outletCollection property="sliderCollection" destination="MK7-Ua-pxR" collectionClass="NSMutableArray" id="dJh-a4-0tr"/>
+                        <outletCollection property="sliderCollection" destination="I5r-P2-BbY" collectionClass="NSMutableArray" id="4Uc-Lv-E6b"/>
+                        <outletCollection property="sliderCollection" destination="0MZ-gD-iie" collectionClass="NSMutableArray" id="22K-r2-XMh"/>
+                        <outletCollection property="sliderCollection" destination="Zfd-k7-iMv" collectionClass="NSMutableArray" id="wMu-AY-nQQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CLe-67-hr6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
