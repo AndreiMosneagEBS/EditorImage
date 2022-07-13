@@ -70,48 +70,59 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="rdJ-Sq-Co0">
-                                <rect key="frame" x="15" y="792" width="384" height="70"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rdJ-Sq-Co0">
+                                <rect key="frame" x="15" y="796" width="384" height="56"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5h-UG-vPF">
-                                        <rect key="frame" x="0.0" y="0.0" width="191" height="70"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5h-UG-vPF">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="56"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="cnacel-button" title="" imagePadding="10">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                        <color key="tintColor" systemColor="systemGrayColor"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Cancen">
+                                            <fontDescription key="titleFontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="18"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="cancelButtonInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kvR-bY-qRr"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYj-dE-MnQ">
-                                        <rect key="frame" x="193" y="0.0" width="191" height="70"/>
+                                        <rect key="frame" x="197" y="0.0" width="187" height="56"/>
+                                        <color key="backgroundColor" red="0.1725490093" green="0.5411764979" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="edit-button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Edit">
+                                            <fontDescription key="titleFontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="18"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="editButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MeQ-fW-w2i"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="ON1-eD-niy"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="rdJ-Sq-Co0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="1Eo-mT-YWB"/>
                             <constraint firstItem="7Xo-iu-elq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4u3-Zx-YWP"/>
                             <constraint firstItem="9UB-E0-86H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="BXL-bz-Fz5"/>
                             <constraint firstAttribute="bottom" secondItem="9UB-E0-86H" secondAttribute="bottom" id="EgX-Sw-mj7"/>
                             <constraint firstItem="9UB-E0-86H" firstAttribute="top" secondItem="7Xo-iu-elq" secondAttribute="bottom" constant="8" id="Ob8-DO-K54"/>
                             <constraint firstItem="9UB-E0-86H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="e4h-1c-6I1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rdJ-Sq-Co0" secondAttribute="trailing" constant="15" id="eLl-3B-1pl"/>
                             <constraint firstItem="7Xo-iu-elq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mI1-Jz-RcU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rdJ-Sq-Co0" secondAttribute="trailing" constant="15" id="qAy-H5-ycd"/>
                             <constraint firstItem="9UB-E0-86H" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-15" id="qIX-89-PJL"/>
-                            <constraint firstItem="rdJ-Sq-Co0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="u8v-Pp-wib"/>
                             <constraint firstItem="7Xo-iu-elq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wIT-xt-eOA"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="rdJ-Sq-Co0" secondAttribute="bottom" id="zhe-49-fgx"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="rdJ-Sq-Co0" secondAttribute="bottom" constant="10" id="zhe-49-fgx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Vqq-6X-q60"/>
                     <connections>
                         <outlet property="CollectionView" destination="9UB-E0-86H" id="YEe-Vm-CYN"/>
+                        <outlet property="cancelButtonOutlet" destination="B5h-UG-vPF" id="2ih-iR-0TI"/>
+                        <outlet property="editButtonOutlet" destination="dYj-dE-MnQ" id="oA1-NP-Ae9"/>
                         <outlet property="shareButtonSelect" destination="qwq-Mi-TZA" id="3xC-f2-uAV"/>
                         <outlet property="viewEditConfirm" destination="rdJ-Sq-Co0" id="S9n-pL-Jmi"/>
                     </connections>
@@ -178,7 +189,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Nd5-SS-Ya8" customClass="CustomSlider">
+                                    <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Nd5-SS-Ya8" customClass="CustomSlider" customModule="ImageEditor" customModuleProvider="target">
                                         <rect key="frame" x="-2" y="38" width="386" height="38.5"/>
                                         <color key="minimumTrackTintColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="maximumTrackTintColor" red="0.46274507050000002" green="0.46274507050000002" blue="0.46274507050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -206,7 +217,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="MK7-Ua-pxR">
+                                    <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="MK7-Ua-pxR" customClass="CustomSlider" customModule="ImageEditor" customModuleProvider="target">
                                         <rect key="frame" x="-2" y="113.5" width="386" height="38.5"/>
                                         <color key="minimumTrackTintColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="maximumTrackTintColor" red="0.46274507050000002" green="0.46274507050000002" blue="0.46274507050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -234,7 +245,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <slider opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="I5r-P2-BbY">
+                                    <slider opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="I5r-P2-BbY" customClass="CustomSlider" customModule="ImageEditor" customModuleProvider="target">
                                         <rect key="frame" x="-2" y="189" width="386" height="39"/>
                                         <color key="minimumTrackTintColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="maximumTrackTintColor" red="0.46274507050000002" green="0.46274507050000002" blue="0.46274507050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -262,7 +273,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <slider opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="0MZ-gD-iie">
+                                    <slider opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="0MZ-gD-iie" customClass="CustomSlider" customModule="ImageEditor" customModuleProvider="target">
                                         <rect key="frame" x="-2" y="264.5" width="386" height="39"/>
                                         <color key="minimumTrackTintColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="maximumTrackTintColor" red="0.46274507050000002" green="0.46274507050000002" blue="0.46274507050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -290,7 +301,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <slider opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Zfd-k7-iMv">
+                                    <slider opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Zfd-k7-iMv" customClass="CustomSlider" customModule="ImageEditor" customModuleProvider="target">
                                         <rect key="frame" x="-2" y="340" width="386" height="39"/>
                                         <color key="minimumTrackTintColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="maximumTrackTintColor" red="0.46274507050000002" green="0.46274507050000002" blue="0.46274507050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -338,25 +349,26 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdx-5B-dAH">
-                                <rect key="frame" x="126.5" y="44" width="46.5" height="32"/>
+                                <rect key="frame" x="127" y="44" width="46" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="cfw-UV-TrW"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="jSn-sb-FHE"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.right" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Left"/>
                                 <connections>
                                     <action selector="rightAction:" destination="NWM-fc-1ma" eventType="touchUpInside" id="5A9-Dt-hVY"/>
+                                    <action selector="rightButtoonOutlet:" destination="4HS-bR-mvf" eventType="touchUpInside" id="pZD-iE-jAf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxj-hZ-hYA">
-                                <rect key="frame" x="79" y="44" width="46.5" height="32"/>
+                                <rect key="frame" x="80" y="44" width="46" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="5Zj-Kt-JzZ"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="lUn-A7-dCa"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.left" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="right"/>
                                 <connections>
                                     <action selector="leftAction:" destination="NWM-fc-1ma" eventType="touchUpInside" id="spG-Yf-3aI"/>
                                 </connections>
@@ -393,7 +405,7 @@
                     </view>
                     <connections>
                         <outlet property="bacButtonOutlet" destination="zxW-CP-Avt" id="lD3-Oz-3Ry"/>
-                        <outlet property="backButton" destination="zxj-hZ-hYA" id="d0l-5Z-FID"/>
+                        <outlet property="backButton" destination="zxj-hZ-hYA" id="29u-yR-zqA"/>
                         <outlet property="brightnessCount" destination="5Z0-xY-JDv" id="7rF-sO-mkN"/>
                         <outlet property="brightnessIntensity" destination="MK7-Ua-pxR" id="r5l-1w-7B9"/>
                         <outlet property="contrastCount" destination="ZKw-XM-4Cz" id="wDm-qm-eUv"/>
@@ -401,6 +413,7 @@
                         <outlet property="imageEdit" destination="Leg-cl-oXm" id="1hN-nL-f8c"/>
                         <outlet property="monochromeCount" destination="pwL-C2-lvF" id="bEF-rd-abm"/>
                         <outlet property="monochromeIntensity" destination="I5r-P2-BbY" id="B5a-Tk-qX7"/>
+                        <outlet property="rightButton" destination="bdx-5B-dAH" id="DaU-Wy-sgc"/>
                         <outlet property="sepiaCount" destination="GF3-Bk-kGa" id="Ub3-lh-q27"/>
                         <outlet property="sepiaIntensity" destination="0MZ-gD-iie" id="uAm-Ew-IHN"/>
                         <outlet property="setButtonColor" destination="oyA-of-5zg" id="eWj-lH-uqR"/>
@@ -416,6 +429,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CLe-67-hr6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="4HS-bR-mvf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1621.7391304347827" y="87.723214285714278"/>
         </scene>
@@ -438,16 +452,17 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Left" width="22" height="18"/>
         <image name="Show Original" width="112" height="32"/>
         <image name="VectorChek" width="17" height="12"/>
-        <image name="arrowshape.turn.up.left" catalog="system" width="128" height="106"/>
-        <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
-        <image name="cnacel-button" width="174" height="56"/>
-        <image name="edit-button" width="174" height="56"/>
+        <image name="right" width="22" height="18"/>
         <image name="share" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

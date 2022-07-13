@@ -18,6 +18,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var CollectionView: UICollectionView!
     @IBOutlet weak var viewEditConfirm: UIView!
     @IBOutlet weak var shareButtonSelect: UIButton!
+    @IBOutlet weak var cancelButtonOutlet: UIButton!
+    @IBOutlet weak var editButtonOutlet: UIButton!
+    @IBOutlet weak var rightButton: UIButton!
     
     var delegate: ViewControllerDelegate?
     
@@ -35,8 +38,25 @@ class ViewController: UIViewController {
         
     }
     
+    @objc func holdDown (sender: UIButton) {
+        cancelButtonOutlet.backgroundColor = .systemBackground
+    }
+    
+    @objc func holdRelease (sender: UIButton) {
+        cancelButtonOutlet.backgroundColor = UIColor(red: 0 , green: 26, blue: 95, alpha: 1)
+    }
+    
+    
+    
     private func editButton() {
         shareButtonSelect.tintColor = UIColor(named: "Color")
+        cancelButtonOutlet.layer.cornerRadius = 4
+        cancelButtonOutlet.layer.borderWidth = 1
+        cancelButtonOutlet.layer.borderColor = UIColor.gray.cgColor
+        editButtonOutlet.layer.cornerRadius = 4
+        cancelButtonOutlet.addTarget(self, action: #selector(holdDown), for: .touchUpInside)
+        cancelButtonOutlet.addTarget(self, action: #selector(holdRelease), for: .touchDown)
+        cancelButtonOutlet.backgroundColor = .red
     }
     
     private func registerCell() {
@@ -72,6 +92,15 @@ class ViewController: UIViewController {
     
     
     //MARK: - Actions
+    
+    
+    @IBAction func cancelButtonInside(_ sender: UIButton) {
+//        viewEditConfirm.isHidden = true
+//        shareButtonSelect.isHidden = true
+       }
+    
+    
+
     
     @IBAction func editButton(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

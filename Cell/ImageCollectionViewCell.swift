@@ -14,15 +14,14 @@ protocol ImageCollectionViewCellDelegate: AnyObject {
 
 class ImageCollectionViewCell: UICollectionViewCell {
     
+    
     static let identifier = "ImageCollectionViewCell"
     weak var cellDelegate: ImageCollectionViewCellDelegate?
     
-    @IBOutlet weak var checkView: UIView!
     @IBOutlet weak var imageViewCell: UIImageView!
     @IBOutlet weak var checkButton: UIButton!
     
-    private func configView() {
-        checkView.layer.cornerRadius = checkView.bounds.height / 2
+    func configView() {
         checkButton.image(for: .selected)
         imageViewCell.layer.cornerRadius = 4
     }

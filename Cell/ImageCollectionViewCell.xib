@@ -23,42 +23,33 @@
                             <constraint firstAttribute="width" constant="82" id="zT7-es-plV"/>
                         </constraints>
                     </imageView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rR2-Dj-Gz2">
-                        <rect key="frame" x="5" y="5" width="16" height="16"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pve-Se-XPg">
-                                <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="uncheck"/>
-                                <state key="selected" image="check"/>
-                                <connections>
-                                    <action selector="isSelectedButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="eaS-jE-esy"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pve-Se-XPg">
+                        <rect key="frame" x="0.0" y="0.0" width="82" height="82"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="pve-Se-XPg" secondAttribute="trailing" id="DG9-af-AEj"/>
-                            <constraint firstAttribute="height" constant="16" id="VDt-89-5Cw"/>
-                            <constraint firstItem="pve-Se-XPg" firstAttribute="top" secondItem="rR2-Dj-Gz2" secondAttribute="top" id="cOJ-qj-26P"/>
-                            <constraint firstAttribute="width" constant="16" id="paK-FT-kk1"/>
-                            <constraint firstAttribute="bottom" secondItem="pve-Se-XPg" secondAttribute="bottom" id="pxY-gd-M4b"/>
-                            <constraint firstItem="pve-Se-XPg" firstAttribute="leading" secondItem="rR2-Dj-Gz2" secondAttribute="leading" id="w3b-0u-aCY"/>
+                            <constraint firstAttribute="width" constant="82" id="9KH-uH-7jK"/>
+                            <constraint firstAttribute="height" constant="82" id="aCe-HN-uwu"/>
                         </constraints>
-                    </view>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="uncheck"/>
+                        <state key="selected" image="check"/>
+                        <connections>
+                            <action selector="isSelectedButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="eaS-jE-esy"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="rR2-Dj-Gz2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="U4D-hF-mFe"/>
+                <constraint firstAttribute="trailing" secondItem="pve-Se-XPg" secondAttribute="trailing" id="42h-VN-kmd"/>
                 <constraint firstItem="BsM-II-zvd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="UfZ-H3-oFa"/>
-                <constraint firstItem="rR2-Dj-Gz2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="fpl-47-lW5"/>
+                <constraint firstItem="pve-Se-XPg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cfO-UT-Afr"/>
+                <constraint firstItem="pve-Se-XPg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fmf-nV-yA5"/>
+                <constraint firstAttribute="bottom" secondItem="pve-Se-XPg" secondAttribute="bottom" id="goi-kk-cfQ"/>
                 <constraint firstItem="BsM-II-zvd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="kNT-Q0-spd"/>
             </constraints>
             <size key="customSize" width="82" height="82"/>
             <connections>
                 <outlet property="checkButton" destination="pve-Se-XPg" id="qRW-Lc-HRM"/>
-                <outlet property="checkView" destination="rR2-Dj-Gz2" id="NeO-i8-wO9"/>
                 <outlet property="imageViewCell" destination="BsM-II-zvd" id="4gj-jX-ovI"/>
             </connections>
             <point key="canvasLocation" x="153.62318840579712" y="135.26785714285714"/>

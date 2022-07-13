@@ -14,7 +14,10 @@ class EditPhotoViewController: UIViewController {
     private enum SliderType: Int {
         case contrast = 1
         case brightness
-        // ....
+        case monochrome
+        case sepia
+        case vignette
+        
     }
     
     private class ModifiedValue {
@@ -41,8 +44,6 @@ class EditPhotoViewController: UIViewController {
     var valueVignette = Int()
     var changeValue: Bool = true
     var valueOfSlider:[ (slider: UISlider, value: Int) ] = []
-    
-    
     var lastItem: Int = 0
     
     @IBOutlet weak var imageEdit: UIImageView!
@@ -58,6 +59,7 @@ class EditPhotoViewController: UIViewController {
     @IBOutlet var sliderCollection: [UISlider]!
     
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var rightButton: UIButton!
     
     @IBOutlet weak var contrastIntensity: UISlider!
     @IBOutlet weak var brightnessIntensity: UISlider!
@@ -85,6 +87,9 @@ class EditPhotoViewController: UIViewController {
         bacButtonOutlet.tintColor = UIColor(named: "Color")
         viewOutlet.layer.cornerRadius = viewOutlet.frame.height / 2
         viewOutlet.backgroundColor = UIColor(named: "Color")
+        backButton.tintColor = UIColor(named:"Color")
+        rightButton.tintColor = UIColor(named:"Color")
+
     }
     
     private func conditionSine(value: Float) -> String {
@@ -123,7 +128,9 @@ class EditPhotoViewController: UIViewController {
     
     @IBAction func leftAction(_ sender: Any) {
         let _array = modifiedSliderValues.filter({ $0.backType == 2 })
+    print(_array)
         let lastModifiedSlider = _array.dropLast().last
+        print(lastModifiedSlider)
         lastModifiedSlider?.backType = 1
         
         print("type: \(lastModifiedSlider?.type) - v: \(lastModifiedSlider?.value)")
@@ -208,10 +215,12 @@ class EditPhotoViewController: UIViewController {
         print("type: \(lastModifiedSlider?.type) - v: \(lastModifiedSlider?.value)")
         
         if lastModifiedSlider?.type != .contrast {
+            
             return
         }
         
         guard let value = lastModifiedSlider?.value else {
+            
             return
         }
         
@@ -240,13 +249,18 @@ class EditPhotoViewController: UIViewController {
     
     
     @IBAction func backButton(_ sender: Any) {
+        
         popToBack()
+        
+        
     }
     
     @IBAction func shareButton(_ sender: UIButton) {
         guard let imageEdit = imageEdit.image else {return}
         SharedServices.sharedImage(image: imageEdit, parentView: self)
+        
     }
+    
     
     @IBAction func saveButton(_sender: UIButton) {
         guard let image = imageEdit.image else {return}
