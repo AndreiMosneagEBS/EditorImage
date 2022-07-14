@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         editButtonOutlet.layer.cornerRadius = 4
         cancelButtonOutlet.addTarget(self, action: #selector(holdDown), for: .touchUpInside)
         cancelButtonOutlet.addTarget(self, action: #selector(holdRelease), for: .touchDown)
-        cancelButtonOutlet.backgroundColor = .red
+        cancelButtonOutlet.backgroundColor = .systemBackground
     }
     
     private func registerCell() {
@@ -95,8 +95,10 @@ class ViewController: UIViewController {
     
     
     @IBAction func cancelButtonInside(_ sender: UIButton) {
-//        viewEditConfirm.isHidden = true
-//        shareButtonSelect.isHidden = true
+        viewEditConfirm.isHidden = true
+        shareButtonSelect.isHidden = true
+        lastAssetSelected = nil
+        CollectionView.reloadData()
        }
     
     
